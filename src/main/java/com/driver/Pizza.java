@@ -11,7 +11,7 @@ public class Pizza {
 
     private boolean isCheeseAdded;
     private boolean isToppingAdded;
-    private boolean isBillGenrated;
+    private boolean isBillGenerated;
     private boolean isTakeAwayAdded;
 
 
@@ -63,8 +63,8 @@ public class Pizza {
     }
 
     public String getBill(){
-        if(isBillGenrated == false){
-            isBillGenrated = true;
+        if(isBillGenerated == false){
+            isBillGenerated = true;
             if(isCheeseAdded == true){
                 this.bill = this.bill + "Extra Cheese Added: " + this.extraCheesePrice + "\n";
             }
@@ -72,7 +72,7 @@ public class Pizza {
                 this.bill = this.bill + "Extra Topping Added: " + this.extraToppingPrice + "\n";
             }
             if(isTakeAwayAdded == true){
-                this.bill = this.bill + "Paperbag Added: " + this.takeAwayPrice + "\n";
+                this.bill = this.bill + "PepperBag Added: " + this.takeAwayPrice + "\n";
             }
             this.bill = this.bill + "Total Price: " + this.price + "\n";
         }
