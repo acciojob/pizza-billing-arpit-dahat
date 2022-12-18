@@ -26,7 +26,7 @@ public class Pizza {
         if(isVeg==true){
 
             this.price = 300;
-            this.extraToppingPrice = 270;
+            this.extraToppingPrice = 70;
         }
         else{
             this.price = 400;
@@ -38,6 +38,7 @@ public class Pizza {
     }
 
     public int getPrice(){
+
         return this.price;
     }
 
