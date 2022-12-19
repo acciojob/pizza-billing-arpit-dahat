@@ -39,7 +39,7 @@ public class Pizza {
         this.isToppingAdded = false;
         this.isTakeAwayAdded = false;
 
-        this.bill = "Base Of The Pizza: " + this.price + "\n";
+        this.bill = "Base Price Of The Pizza: " + this.price + "\n";
 
     }
 
