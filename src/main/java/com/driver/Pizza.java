@@ -22,21 +22,19 @@ public class Pizza {
 
 
     public Pizza(Boolean isVeg){
+        this.isVeg = isVeg;
 
-        /*this.extraCheesePrice = 80;
-        this.isVeg = isVeg;
-        this.takeAwayPrice = 20;*/
-        this.isVeg = isVeg;
         this.cheesePrice = 80;
         this.takeAwayPrice = 20;
+
         if(isVeg==true){
             this.price = 300;
             this.toppingPrice = 70;
-        }
-        else{
+        }else{
             this.price = 400;
             this.toppingPrice = 120;
         }
+
         this.isCheeseAdded = false;
         this.isToppingAdded = false;
         this.isTakeAwayAdded = false;
