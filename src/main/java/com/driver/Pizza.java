@@ -5,26 +5,31 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    private int extraCheesePrice;
-    private int extraToppingPrice;
+
+    private int cheesePrice;
+    private int toppingPrice;
     private int takeAwayPrice;
 
-    private boolean isCheeseAdded;
-    private boolean isToppingAdded;
-    private boolean isBillGenerated;
-    private boolean isTakeAwayAdded;
+
+    private int extraCheesePrice;
+    private int extraToppingPrice;
+    //private int takeAwayPrice;
+
+    boolean isCheeseAdded;
+    boolean isToppingAdded;
+    boolean isTakeAwayAdded;
+    boolean isBillGenerated;
 
 
     public Pizza(Boolean isVeg){
-        this.isCheeseAdded = false;
-        this.isToppingAdded = false;
-        this.isTakeAwayAdded = false;
-        this.extraCheesePrice = 80;
-        this.isVeg = isVeg;
 
+        /*this.extraCheesePrice = 80;
+        this.isVeg = isVeg;
+        this.takeAwayPrice = 20;*/
+        this.isVeg = isVeg;
+        this.cheesePrice = 80;
         this.takeAwayPrice = 20;
         if(isVeg==true){
-
             this.price = 300;
             this.extraToppingPrice = 70;
         }
@@ -32,6 +37,9 @@ public class Pizza {
             this.price = 400;
             this.extraToppingPrice = 120;
         }
+        this.isCheeseAdded = false;
+        this.isToppingAdded = false;
+        this.isTakeAwayAdded = false;
 
         this.bill = "Base Of The Pizza: "+this.price + "\n";
 
@@ -44,14 +52,14 @@ public class Pizza {
 
     public void addExtraCheese(){
         if(isCheeseAdded == false){
-            this.price = this.price + this.extraCheesePrice;
+            this.price = this.price + this.cheesePrice;
             isCheeseAdded = true;
         }
     }
 
     public void addExtraToppings(){
         if(isToppingAdded == false){
-            this.price = this.price + this.extraToppingPrice;
+            this.price = this.price + this.toppingPrice;
             isToppingAdded = true;
         }
     }
@@ -67,15 +75,16 @@ public class Pizza {
         if(isBillGenerated == false){
             isBillGenerated = true;
             if(isCheeseAdded == true){
-                this.bill = this.bill + "Extra Cheese Added: " + this.extraCheesePrice + "\n";
-            }
+                this.bill = this.bill + "Extra Cheese Added: " + this.cheesePrice + "\n";
+              }
             if(isToppingAdded == true){
-                this.bill = this.bill + "Extra Topping Added: " + this.extraToppingPrice + "\n";
+                this.bill = this.bill + "Extra Topping Added: " + this.toppingPrice + "\n";
             }
             if(isTakeAwayAdded == true){
                 this.bill = this.bill + "PepperBag Added: " + this.takeAwayPrice + "\n";
             }
             this.bill = this.bill + "Total Price: " + this.price + "\n";
+            isBillGenerated = true;
         }
         return this.bill;
     }
